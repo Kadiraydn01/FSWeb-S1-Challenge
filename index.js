@@ -193,16 +193,19 @@ console.log(fenomenProfilleri);
 /* Görev 5:
 Aşağıdakileri yapmak için fenomenSil'i kullanın:
 1. ilk parametre olarak fenomenler dizisini alın
-2. ikinci parametre olarak istenen dizin(indeks) saysısını argüman olarak alın
+2. ikinci parametre olarak istenen dizin(indeks) sayısını argüman olarak alın
 3. Parametre dizisinin bir kopyası olan yeni bir dizi oluşturun
 4. Kopyalanan diziden istenen indeksteki fenomeni çıkarın
 5. Ortaya çıkan diziyi döndürün
 
 ÖRNEK: fenomenSil işlevi fenomenler dizisi ve 0 indeks sayısı ile çağrılırsa, veri kümemizden 'Instagram' kaldırılmış olarak döndürür. */
-function fenomenSil(/*kod*/) {
-  /*kod*/
+function fenomenSil(fenomenler, indeks) {
+  const yeniDizi = [...fenomenler];
+  yeniDizi.splice(indeks, 1);
+  return yeniDizi;
 }
-
+const yeniFenomenler = fenomenSil(fenomenler, 2);
+console.log(yeniFenomenler);
 /* Görev 6:
 Aşağıdakileri yapmak için fenomenEkle'i kullanın:
 1. ilk parametre olarak fenomenler dizisini alın
