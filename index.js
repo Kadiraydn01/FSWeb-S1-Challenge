@@ -251,14 +251,11 @@ Aşağıdakileri yapmak için enFenomenler'yi kullanın:
 ÖRNEK: enFenomenler(fenomenler) çağrıldığında sonuç olarak ["Instagram", "Cristiano Ronaldo", ... "Khabane lame"] dönemelidir
 */
 function enFenomenler(fenomenler) {
-  const enFenomenAdlar = [];
-  for (let i = 0; i < fenomenler.lenght; i++) {
-    const fenomen = fenomenler[i];
-    if (fenomen.followers > 100000000) {
-      enFenomenAdlar.push(fenomen.profile);
-    }
-  }
-  return enFenomenAdlar;
+  const enFenomenlerDizi = fenomenler.filter(
+    (fenomen) => fenomen.followers > 100000000
+  );
+  const enFenomenlerAdlar = enFenomenlerDizi.map((fenomen) => fenomen.profile);
+  return enFenomenlerAdlar;
 }
 
 /* Görev 8:
@@ -270,8 +267,16 @@ Aşağıdakileri yapmak için fenomenGonderimSayisi'nı kullanın:
 ÖRNEK: fenomenGonderimSayisi(fenomenler, 'Will Smith') çağrıldığında "136" dönmelidir
 */
 
-function fenomenGonderimSayisi(/*kod*/) {
-  /*kod*/
+function fenomenGonderimSayisi(fenomenler, profilAdi) {
+  for (let i = 0; i < fenomenler.length; i++) {
+    const fenomen = fenomenler[i];
+
+    if (fenomen.profile === profilAdi) {
+      return fenomen.posts;
+    }
+  }
+
+  return "Profil bulunamadı";
 }
 
 /* Görev 9:
