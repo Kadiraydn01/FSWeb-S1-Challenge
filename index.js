@@ -181,10 +181,15 @@ Aşağıdakileri yapmak için profilListesi'ni kullanın:
 🌟 Dönüş ÖRNEĞİ: ["Instagram", "Cristiano Ronaldo", "Kylie"....]
 */
 
-function profilListesi(/*kod*/) {
-  /*kod*/
+function profilListesi(fenomenler) {
+  const yeniDizi = [...fenomenler];
+  yeniDizi.forEach((fenomen, indeks) => {
+    yeniDizi[indeks] = fenomen.profile;
+  });
+  return yeniDizi;
 }
-
+const fenomenProfilleri = profilListesi(fenomenler);
+console.log(fenomenProfilleri);
 /* Görev 5:
 Aşağıdakileri yapmak için fenomenSil'i kullanın:
 1. ilk parametre olarak fenomenler dizisini alın
